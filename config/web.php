@@ -49,6 +49,11 @@ $config = [
         
     ],
     'params' => $params,
+    'modules' => [
+        'site' => [
+            'class' => 'app\modules\site\Site',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
