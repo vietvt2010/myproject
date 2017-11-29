@@ -50,8 +50,8 @@ $config = [
     ],
     'params' => $params,
     'modules' => [
-        'site' => [
-            'class' => 'app\modules\site\Site',
+        'web' => [
+            'class' => 'app\modules\web\Web',
         ],
     ],
 ];
