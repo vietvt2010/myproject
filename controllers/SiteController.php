@@ -13,7 +13,7 @@ use app\models\ContactForm;
 class SiteController extends Controller
 {
     // layout of this controller
-    public $layout = false;
+    public $layout = 'main';
     
     /**
      * @inheritdoc
@@ -64,7 +64,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('home');
+        return $this->render('index');
     }
 
     /**
