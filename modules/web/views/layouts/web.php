@@ -24,29 +24,44 @@ WebAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-    <div class="wrap">
-        <div class="container-fluid">
-            <div class="row">
+    <div class="wraper">
+        <!-- header -->
+        <header id="header" class="container-fluid">
+            <div id="top-header" class="row">
+                <div class="col-md-2">
+                    <strong id="welcome" class="uppercase">CHÀO MỪNG BẠN ĐẾN VỚI My Shop</strong>
+                </div>
+            </div>
+            <div id="main-header" class="row">
                 <div class="col-md-2">
                     <img src="<?= Url::to('@web/images/logo.png') ?>" class="img-responsive">
                 </div>
             </div>
-        </div>
-        <div class="container">
+            <div id="nav-header" class="row">
+                
+            </div>
+        </header>
+        <!-- end header -->
+        
+        <!-- main -->
+        <main id="main" class="container">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <?= $content ?>
-        </div>
-    </div>
+        </main>
+        <!-- end main -->
     
-    <footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <!-- footer -->
+        <footer id="footer" class="footer navbar-fixed-bottom container-fluid">
+            <div class="row">
+                <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
-            <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
-    </footer>
+                <p class="pull-right"><?= Yii::powered() ?></p>
+            </div>
+        </footer>
+        <!-- end footer -->
+    </div>
 <?php $this->endBody() ?>
 </body>
 </html>

@@ -24,6 +24,8 @@ class Web extends \yii\base\Module
     {
         parent::init();
 
-        // custom initialization code goes here
+        $this->setAliases([
+            '@webassets' => __DIR__ . '/assets',
+        ]);
     }
 }

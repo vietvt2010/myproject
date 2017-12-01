@@ -1,2 +1,11 @@
-
-
+html,
+body {
+    font-size: 14;
+    font-family: sans-serif;
+}
+#top-header {
+    background-color: #A38876;
+}
+#welcome {
+    color: #FCFBFB;
+}

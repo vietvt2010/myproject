@@ -11,15 +11,17 @@ class WebAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@app/modules/web/assets/dist';
-    public $baseUrl = '@app/modules/web/assets/dist/images';
+    public $sourcePath = '@webassets/dist';
+    public $baseUrl = '@webassets/dist';
     public $css = [
-        
+        'css/style.css',
     ];
     public $js = [
         
     ];
     public $depends = [
-        'app\assets\AppAsset',
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapAsset',
     ];
+    
 }
