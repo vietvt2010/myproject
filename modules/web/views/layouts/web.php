@@ -8,7 +8,7 @@ use yii\widgets\Breadcrumbs;
 use app\modules\web\assets\WebAsset;
 use yii\helpers\Url;
 
-WebAsset::register($this);
+$assets = WebAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -26,18 +26,25 @@ WebAsset::register($this);
 
     <div class="wraper">
         <!-- header -->
-        <header id="header" class="container-fluid">
+        <header id="header" class="container">
             <div id="top-header" class="row">
-                <div class="col-md-2">
-                    <strong id="welcome" class="uppercase">CHÀO MỪNG BẠN ĐẾN VỚI My Shop</strong>
-                </div>
-            </div>
-            <div id="main-header" class="row">
-                <div class="col-md-2">
-                    <img src="<?= Url::to('@web/images/logo.png') ?>" class="img-responsive">
+                <div class="col-md-12">
+                    <img src="<?= Url::to($assets->baseUrl . '/images/Banner-da.jpg') ?>" style="width: 100%;">
                 </div>
             </div>
             <div id="nav-header" class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-default">
+                        <ul class="nav navbar-nav">
+                            <li class="active menu-tab"><a href="#">Home</a></li>
+                            <li class="menu-tab"><a href="#">Page 1</a></li>
+                            <li class="menu-tab"><a href="#">Page 2</a></li>
+                            <li class="menu-tab"><a href="#">Page 3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div id="slide-header" class="row">
                 
             </div>
         </header>
