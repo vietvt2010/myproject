@@ -9,6 +9,12 @@ use app\modules\web\assets\WebAsset;
 use yii\helpers\Url;
 
 $assets = WebAsset::register($this);
+
+$this->registerJs(
+"$(window).on('load', function() {
+            $('#slider').nivoSlider(); 
+        });"
+)
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -20,6 +26,7 @@ $assets = WebAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -45,7 +52,17 @@ $assets = WebAsset::register($this);
                 </div>
             </div>
             <div id="slide-header" class="row">
-                
+                <div class="slider-wrapper">
+                    <div id="slider" class="nivoSlider">
+                        <img src="<?= Url::to($assets->baseUrl . '/images/toystory.jpg') ?>" data-thumb="images/toystory.jpg" alt="" />
+                        <a href="http://dev7studios.com"><img src="<?= Url::to($assets->baseUrl . '/images/up.jpg') ?>" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
+                        <img src="<?= Url::to($assets->baseUrl . '/images/walle.jpg') ?>" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
+                        <img src="<?= Url::to($assets->baseUrl . '/images/nemo.jpg') ?>" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
+                    </div>
+                    <div id="htmlcaption" class="nivo-html-caption">
+                        <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                    </div>
+                </div>
             </div>
         </header>
         <!-- end header -->

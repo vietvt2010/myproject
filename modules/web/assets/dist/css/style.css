@@ -2,10 +2,15 @@ html,
 body {
     font-size: 14;
     font-family: sans-serif;
+    background-image: url("../images/bg.jpg");
 }
 #top-header {
     background-color: #A38876;
 }
 #welcome {
     color: #FCFBFB;
+}
+.slider-wrapper { 
+	width: 80%; 
+	margin: 100px auto;
 }
