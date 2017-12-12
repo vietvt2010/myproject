@@ -5,12 +5,22 @@ body {
     background-image: url("../images/bg.jpg");
 }
 #top-header {
-    background-color: #A38876;
+    
 }
 #welcome {
     color: #FCFBFB;
 }
 .slider-wrapper { 
-	width: 80%; 
-	margin: 100px auto;
+	width: 100%; 
+	/*margin: 0 auto;*/
+}
+nav.navbar {
+    margin: 0;
+    background: linear-gradient(#F27935, #D35400);
+}
+ul.nav {
+    width: 100%;
+}
+ul li a {
+    padding: 5px auto;
 }
