@@ -21,6 +21,94 @@ nav.navbar {
 ul.nav {
     width: 100%;
 }
-ul li a {
-    padding: 5px auto;
+#nav-header ul li a {
+    color: white;
+}
+#nav-header ul li.active a{
+    color: #22313F;
+}
+#main-left {
+    padding: 0;
+}
+#main-content {
+    background: url("../images/bgcolRight.png");
+}
+#main-left .left-block span {
+    color: #F1623A;
+    padding-bottom: 5px;
+    
+}
+#main-left .left-block i {
+    margin-right: 10px;
+}
+.menu-head {
+    background: url("../images/bgHead.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    line-height: 25px;
+}
+.menu-body {
+    
+}
+.menu-body ul {
+    padding-left: 15px;
+}
+.menu-body ul li {
+    list-style-image: url("../images/iconItem.png");
+    margin: 5px 0;
+    background: url("../images/bgItem.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    line-height: 35px;
+}
+.menu-body ul li a {
+    text-decoration: none;
+    color: #333;
+}
+.menu-body ul li a:hover {
+    color: #F1623A;
+}
+#main-content {
+    
+}
+#hotline {
+    background: url("../images/hotline.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    z-index: 99;
+    width: 180px;
+    height: 60px;
+    position: fixed;
+    right: 0;
+    top: 40%;
+}
+#hotline p {
+    margin-left: 68px;
+    font-family: utmcafe;
+    padding-top: 10px;
+    line-height: 18px;
+}
+#hotline p span {
+    font-size: 18px;
+    color: red;
+}
+#footer {
+    background-color: #DC461C;
+    height: auto;
+}
+#footer .container {
+    margin-top: 15px;
+    color: white;
+}
+.footer-element strong {
+    font-family: Verdana;
+}
+.footer-element p {
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 13px;
+}
+.fb-page {
+    margin-bottom: 10px;
 }
