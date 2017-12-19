@@ -29,15 +29,17 @@ $this->registerJs(
     </head>
     <body>
         <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        
-        <?php $this->beginBody() ?>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+<?php $this->beginBody() ?>
 
         <!-- hotline -->
         <div id="hotline">
@@ -47,7 +49,7 @@ $this->registerJs(
             </p>
         </div>
         <!-- end hotline -->
-        
+
         <div class="wraper">
             <!-- header -->
             <header id="header" class="container">
@@ -58,7 +60,7 @@ $this->registerJs(
                     </div>
                 </div>
                 <!-- end top header -->
-                
+
                 <!-- nav -->
                 <div id="nav-header" class="row">
                     <div class="col-md-12">
@@ -68,12 +70,16 @@ $this->registerJs(
                                 <li class="menu-tab"><a href="#">Page 1</a></li>
                                 <li class="menu-tab"><a href="#">Page 2</a></li>
                                 <li class="menu-tab"><a href="#">Page 3</a></li>
+                                <li class="menu-tab"><a href="#">Page 4</a></li>
+                                <li class="menu-tab"><a href="#">Page 5</a></li>
+                                <li class="menu-tab"><a href="#">Page 6</a></li>
+                                <li class="menu-tab"><a href="#">Page 7</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <!-- end nav -->
-                
+
                 <!-- slide -->
                 <div id="slide-header" class="row">
                     <div class="slider-wrapper theme-default col-md-12">
@@ -83,9 +89,9 @@ $this->registerJs(
                             <img src="<?= Url::to($assets->baseUrl . '/images/walle.jpg') ?>" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
                             <img src="<?= Url::to($assets->baseUrl . '/images/nemo.jpg') ?>" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
                         </div>
-<!--                        <div id="htmlcaption" class="nivo-html-caption">
-                            <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
-                        </div>-->
+                        <!--                        <div id="htmlcaption" class="nivo-html-caption">
+                                                    <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                                                </div>-->
                     </div>
                 </div>
                 <!-- end slide -->
@@ -110,7 +116,7 @@ $this->registerJs(
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div id="post" class="left-block">
                         <div class="menu-head">
                             <strong><span><i class="glyphicon glyphicon-th-list"></i>BÀI VIẾT ĐƯỢC QUAN TÂM</span></strong>
@@ -125,18 +131,18 @@ $this->registerJs(
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div id="media" class="left-block">
                         <div class="menu-head">
                             <strong><span><i class="glyphicon glyphicon-picture"></i>ALBUM ẢNH</span></strong>
                         </div>
                         <div class="menu-body">
-                            
+
                         </div>
                     </div>
                 </div>
                 <!-- end main left -->
-                
+
                 <!-- main content -->
                 <div id="main-content" class="col-md-9">
                     <?=
@@ -156,6 +162,7 @@ $this->registerJs(
                     <div class="row">
                         <div class="col-md-4 footer-element">
                             <strong>GIỚI THIỆU VỀ KOKONO</strong>
+                            <hr>
                             <p>Trải qua hơn 10 năm hình thành và phát triển, 
                                 Công ty CP Tư vấn Du học KOKONO - Đơn vị thành viên thuộc TẬP ĐOÀN KẾ TOÁN HÀ NỘI hoạt động thành công trong lĩnh vực tư vấn du học Nhật Bản,
                                 Du học Hàn Quốc, Đào tạo Tiếng Nhật, Tiếng Trung, Tiếng Hàn. Hiện tại với 47 Chi nhánh trên toàn quốc,
@@ -163,19 +170,29 @@ $this->registerJs(
                         </div>
                         <div class="col-md-4 footer-element">
                             <strong>LIÊN HỆ</strong>
+                            <hr>
                             <p>Địa chỉ: Số 04 ngõ 322 Lê Trọng Tấn, Thanh Xuân, Hà Nội<br>
                                 Tel: ‎04 33945 999 Hotline: 0913 828 222 - 0989 212 668<br>
                                 Email: duhockokono@gmail.com<br>
                                 Website: www.duhockokono.vn</p>
-                            
-                            <strong>ĐỐI TÁC</strong>
-                            
+
+                            <strong>BẢN ĐỒ CHỈ ĐƯỜNG</strong>
+                            <hr>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.161958496375!2d105.79388031486204!3d20.986143994607826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acc651f1a5d3%3A0x59a99bfb3c117b80!2zNTQzIE5ndXnhu4VuIFRyw6NpLCBWxINuIFF1w6FuLCBIw6AgxJDDtG5nLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1513652003950" height="250" frameborder="0" style="border:0; width: 95%;" allowfullscreen></iframe>
+
                         </div>
                         <div class="col-md-4 footer-element">
-                            <strong>FACEBOOK</strong>
+                            <strong>LIÊN KẾT FACEBOOK</strong>
+                            <hr>
                             <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
                         </div>
                     </div>
+                </div>
+
+                <div id="copyright" class="row">
+                    <p>
+                        <b>Copyright 2017 © Thiết kế website tại Hà Nội bởi Vietvt <a href="mailto:vietvotrung@admicro.vn">vietvotrung@admicro.vn</a></b>
+                    </p>
                 </div>
             </footer>
             <!-- end footer -->

@@ -17,15 +17,22 @@ body {
 nav.navbar {
     margin: 0;
     background: linear-gradient(#F27935, #D35400);
+    min-height: 5px;
 }
 ul.nav {
     width: 100%;
 }
+#nav-header ul li{
+    width: 12%;
+    text-align: center;
+}
 #nav-header ul li a {
     color: white;
+    line-height: 5px;
 }
 #nav-header ul li.active a{
     color: #22313F;
+    background: radial-gradient(circle, #FF1800, #FF7600);
 }
 #main-left {
     padding: 0;
@@ -93,8 +100,8 @@ ul.nav {
     color: red;
 }
 #footer {
-    background-color: #DC461C;
     height: auto;
+    background: linear-gradient(#F27935, #C0392B);
 }
 #footer .container {
     margin-top: 15px;
@@ -102,6 +109,12 @@ ul.nav {
 }
 .footer-element strong {
     font-family: Verdana;
+}
+.footer-element hr {
+    margin-top: 5px;
+    margin-left: 0;
+    width: 68%;
+    
 }
 .footer-element p {
     margin-top: 20px;
@@ -111,4 +124,16 @@ ul.nav {
 }
 .fb-page {
     margin-bottom: 10px;
+}
+#copyright {
+    background-color: #C0392B;
+    text-align: center;
+}
+#copyright p {
+    line-height: 35px;
+    margin: 0 auto;
+}
+#copyright a {
+    text-decoration: none;
+    color: black;
 }
