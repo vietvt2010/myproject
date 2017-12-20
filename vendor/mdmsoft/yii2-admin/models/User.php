@@ -8,7 +8,6 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use mdm\admin\components\Configs;
-use mdm\admin\models\UserProfile;
 
 /**
  * User model
@@ -30,7 +29,7 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 10;
-    
+
     /**
      * @inheritdoc
      */
@@ -194,10 +193,5 @@ class User extends ActiveRecord implements IdentityInterface
     public static function getDb()
     {
         return Configs::userDb();
-    }
-    
-    public function getProfile()
-    {
-        return $this->hasOne(UserProfile::className(), ['id' => 'id']);
     }
 }

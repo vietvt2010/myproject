@@ -15,14 +15,9 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-//        'user' => [
-//            'identityClass' => 'app\models\User',
-//            'enableAutoLogin' => true,
-//        ],
         'user' => [
-            'identityClass' => 'mdm\admin\models\User',
-            'loginUrl' => ['admin/user/login'],
-            'enableAutoLogin' => true,
+            'identityClass' => 'dektrium\user\models\User',
+//            'enableAutoLogin' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -51,9 +46,6 @@ $config = [
             'rules' => [
             ],
         ],
-        'authManager' => [
-            'class' => 'yii\rbac\PhpManager',
-        ]
         
     ],
     'params' => $params,
@@ -61,62 +53,16 @@ $config = [
         'web' => [
             'class' => 'app\modules\web\Web',
         ],
-        'admin' => [
-            'class' => 'mdm\admin\Module',
-            'controllerMap' => [
-                'assignment' => [
-                    'class' => 'mdm\admin\controllers\AssignmentController',
-                    /* 'userClassName' => 'app\models\User', */
-                    'idField' => 'user_id',
-                    'usernameField' => 'username',
-                    'fullnameField' => 'profile.full_name',
-                    'extraColumns' => [
-                        [
-                            'attribute' => 'full_name',
-                            'label' => 'Full Name',
-                            'value' => function($model, $key, $index, $column) {
-                                return $model->profile->full_name;
-                            },
-                        ],
-//                        [
-//                            'attribute' => 'dept_name',
-//                            'label' => 'Department',
-//                            'value' => function($model, $key, $index, $column) {
-//                                return $model->profile->dept->name;
-//                            },
-//                        ],
-//                        [
-//                            'attribute' => 'post_name',
-//                            'label' => 'Post',
-//                            'value' => function($model, $key, $index, $column) {
-//                                return $model->profile->post->name;
-//                            },
-//                        ],
-                    ],
-                    'searchClass' => 'mdm\admin\models\searchs\User',
-                ],
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'mailer' => [
+                'sender'                => 'no-reply@myhost.com', // or ['no-reply@myhost.com' => 'Sender name']
+                'welcomeSubject'        => 'Welcome subject',
+                'confirmationSubject'   => 'Confirmation subject',
+                'reconfirmationSubject' => 'Email change subject',
+                'recoverySubject'       => 'Recovery subject',
             ],
-            'layout' => 'left-menu',
-            'mainLayout' => '@app/views/layouts/main.php',
-            'menus' => [
-                'assignment' => [
-                    'label' => 'Grant Access' // change label
-                ],
-                'route' => null, // disable menu
-            ],
-        ]
-    ],
-    'as access' => [
-        'class' => 'mdm\admin\components\AccessControl',
-        'allowActions' => [
-            'web/*',
-            'admin/*',
-//            'some-controller/some-action',
-            // The actions listed here will be allowed to everyone including guests.
-            // So, 'admin/*' should not appear here in the production, of course.
-            // But in the earlier stages of your development, you may probably want to
-            // add a lot of actions here until you finally completed setting up rbac,
-            // otherwise you may not even take a first step.
+            'admins' => ['admin'],
         ],
     ],
 ];

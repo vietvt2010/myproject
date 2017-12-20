@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit59f0f6f3eff03c9860620963ff2c4da4
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
@@ -19,11 +19,13 @@ class ComposerStaticInit59f0f6f3eff03c9860620963ff2c4da4
         'y' => 
         array (
             'yii\\swiftmailer\\' => 16,
+            'yii\\httpclient\\' => 15,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
+            'yii\\authclient\\' => 15,
             'yii\\' => 4,
         ),
         'p' => 
@@ -33,6 +35,10 @@ class ComposerStaticInit59f0f6f3eff03c9860620963ff2c4da4
         'm' => 
         array (
             'mdm\\admin\\' => 10,
+        ),
+        'd' => 
+        array (
+            'dektrium\\user\\' => 14,
         ),
         'c' => 
         array (
@@ -85,6 +91,10 @@ class ComposerStaticInit59f0f6f3eff03c9860620963ff2c4da4
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
         ),
+        'yii\\httpclient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-httpclient',
+        ),
         'yii\\gii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-gii',
@@ -105,6 +115,10 @@ class ComposerStaticInit59f0f6f3eff03c9860620963ff2c4da4
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap',
         ),
+        'yii\\authclient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-authclient',
+        ),
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
@@ -118,6 +132,10 @@ class ComposerStaticInit59f0f6f3eff03c9860620963ff2c4da4
         'mdm\\admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
+        ),
+        'dektrium\\user\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dektrium/yii2-user',
         ),
         'cebe\\markdown\\' => 
         array (

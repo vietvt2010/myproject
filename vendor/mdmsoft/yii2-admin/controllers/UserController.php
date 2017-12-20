@@ -116,12 +116,12 @@ class UserController extends Controller
     public function actionLogin()
     {
         if (!Yii::$app->getUser()->isGuest) {
-            return $this->redirect('/admin/user/login');
+            return $this->goHome();
         }
 
         $model = new Login();
         if ($model->load(Yii::$app->getRequest()->post()) && $model->login()) {
-            return $this->redirect('/admin');
+            return $this->goBack();
         } else {
             return $this->render('login', [
                     'model' => $model,
@@ -137,7 +137,7 @@ class UserController extends Controller
     {
         Yii::$app->getUser()->logout();
 
-        return $this->redirect('/admin');
+        return $this->goHome();
     }
 
     /**

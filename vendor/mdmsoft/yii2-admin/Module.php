@@ -4,7 +4,6 @@ namespace mdm\admin;
 
 use Yii;
 use yii\helpers\Inflector;
-use yii\filters\AccessControl;
 
 /**
  * GUI manager for RBAC.
@@ -39,29 +38,24 @@ use yii\filters\AccessControl;
  */
 class Module extends \yii\base\Module
 {
-
     /**
      * @inheritdoc
      */
     public $defaultRoute = 'assignment';
-
     /**
      * @var array Nav bar items.
      */
     public $navbar;
-
     /**
      * @var string Main layout using for module. Default to layout of parent module.
      * Its used when `layout` set to 'left-menu', 'right-menu' or 'top-menu'.
      */
     public $mainLayout = '@mdm/admin/views/layouts/main.php';
-
     /**
      * @var array
      * @see [[menus]]
      */
     private $_menus = [];
-
     /**
      * @var array
      * @see [[menus]]
@@ -75,7 +69,6 @@ class Module extends \yii\base\Module
         'rule' => 'Rules',
         'menu' => 'Menus',
     ];
-
     /**
      * @var array
      * @see [[items]]
@@ -153,7 +146,8 @@ class Module extends \yii\base\Module
                 if (is_string($value)) {
                     $value = ['label' => $value];
                 }
-                $this->_normalizeMenus[$id] = isset($this->_normalizeMenus[$id]) ? array_merge($this->_normalizeMenus[$id], $value) : $value;
+                $this->_normalizeMenus[$id] = isset($this->_normalizeMenus[$id]) ? array_merge($this->_normalizeMenus[$id], $value)
+                : $value;
                 if (!isset($this->_normalizeMenus[$id]['url'])) {
                     $this->_normalizeMenus[$id]['url'] = [$mid . $id];
                 }
@@ -189,22 +183,4 @@ class Module extends \yii\base\Module
         }
         return false;
     }
-
-    /**
-     * @inheritdoc
-     */
-//    public function behaviors()
-//    {
-//        return [
-//            'access' => [
-//                'class' => AccessControl::className(),
-//                'except' => ['user/login'],
-//                'rules' => [
-//                    'allow' => true,
-//                    'roles' => ['@'],
-//                ]
-//            ]
-//        ];
-//    }
-
 }
