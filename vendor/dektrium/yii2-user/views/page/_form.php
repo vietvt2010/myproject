@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model dektrium\user\models\Page */
@@ -14,13 +15,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['name' => 'content', 'id' => 'editor']) ?>
-    
-    <script>
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace( 'editor' );
-    </script>
+    <?= $form->field($model, 'content')->widget(CKEditor::className(),[
+        'options' => ['rows' => 6,],
+        'preset' => 'full'
+    ]) ?>
 
     <?= $form->field($model, 'nav_id')->textInput(['maxlength' => true]) ?>
 

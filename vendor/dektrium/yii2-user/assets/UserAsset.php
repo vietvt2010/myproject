@@ -11,7 +11,7 @@ class UserAsset extends AssetBundle
     public $sourcePath = '@vendor/dektrium/yii2-user/assets/';
     public $baseUrl = '@vendor/dektrium/';
     public $css = [
-//        'bower_components/bootstrap/dist/css/bootstrap.min.css',
+        'bower_components/bootstrap/dist/css/bootstrap.min.css',
         'bower_components/font-awesome/css/font-awesome.min.css',
         'bower_components/Ionicons/css/ionicons.min.css',
         'dist/css/AdminLTE.min.css',
@@ -23,9 +23,9 @@ class UserAsset extends AssetBundle
         'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
     ];
     public $js = [
-//        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/jquery/dist/jquery.min.js',
         "bower_components/jquery-ui/jquery-ui.min.js",
-//        "bower_components/bootstrap/dist/js/bootstrap.min.js",
+        "bower_components/bootstrap/dist/js/bootstrap.min.js",
         "bower_components/raphael/raphael.min.js",
         "bower_components/morris.js/morris.min.js",
         "bower_components/jquery-sparkline/dist/jquery.sparkline.min.js",

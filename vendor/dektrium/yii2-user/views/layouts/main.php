@@ -14,7 +14,6 @@ UserAsset::register($this);
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="//cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 2 | Dashboard</title>
@@ -56,15 +55,15 @@ UserAsset::register($this);
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <?php $this->beginBody() ?>
-<div class="wrapper">
+    <div class="wrapper" style="background-color: #ecf0f5;">
     
   <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>Admin</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Quản trị website</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
