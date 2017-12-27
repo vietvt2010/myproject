@@ -27,7 +27,7 @@ class UserAsset extends AssetBundle
         "bower_components/jquery-ui/jquery-ui.min.js",
         "bower_components/bootstrap/dist/js/bootstrap.min.js",
         "bower_components/raphael/raphael.min.js",
-        "bower_components/morris.js/morris.min.js",
+        "bower_components/morris.js/morris.js",
         "bower_components/jquery-sparkline/dist/jquery.sparkline.min.js",
         "plugins/jvectormap/jquery-jvectormap-1.2.2.min.js",
         "plugins/jvectormap/jquery-jvectormap-world-mill-en.js",
@@ -43,9 +43,10 @@ class UserAsset extends AssetBundle
         "dist/js/demo.js",
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'yii\web\JqueryAsset',
+//        'yii\web\YiiAsset',
+//        'yii\bootstrap\BootstrapAsset',
+//        'yii\web\JqueryAsset',
+        'app\assets\AppAsset',
     ];
     
     /**
@@ -56,5 +57,6 @@ class UserAsset extends AssetBundle
         parent::init();
 
         $this->publishOptions['forceCopy'] = true;
+        $this->jsOptions = ['position' => \yii\web\View::POS_HEAD];
     }
 }

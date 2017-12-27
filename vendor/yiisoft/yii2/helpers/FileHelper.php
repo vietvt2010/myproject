@@ -7,6 +7,8 @@
 
 namespace yii\helpers;
 
+use Yii;
+
 /**
  * File system helper
  *
@@ -16,4 +18,38 @@ namespace yii\helpers;
  */
 class FileHelper extends BaseFileHelper
 {
+    /**
+     * Upload a file
+     * @param string $image file name to be upload
+     * @return string the file path after upload
+     */
+    public static function uploadImage($image)
+    {
+        $destination = Yii::$app->params['imagePath'] . $image->baseName . time() . '.' . $image->extension;
+        
+        if ($image->saveAs($destination)) {
+            return $destination;
+        }
+        
+        return false;
+    }
+    
+    /**
+     * @param object $model object of model to update
+     * @param string $destination value of image property
+     */
+    public static function updateImage($model, $destination)
+    {
+        $model->updateAttributes(['image' => $destination]);
+        Yii::$app->session->setFlash('success', 'Update product successfully!');
+    }
+    
+    
+    /**
+     * 
+     */
+    public static function resizeImage($destination)
+    {
+        Image::getImagine()->open($destination)->resize(new Box(400, 460))->save($destination);
+    }
 }

@@ -119,9 +119,12 @@ class Gallery extends Widget
         $url = ArrayHelper::getValue($item, 'url', $src);
         $options = ArrayHelper::getValue($item, 'options', []);
         $imageOptions = ArrayHelper::getValue($item, 'imageOptions', []);
+        $id = ArrayHelper::getValue($item, 'id', 0);
         Html::addCssClass($options, 'gallery-item');
 
-        return Html::a(Html::img($src, $imageOptions), $url, $options);
+//        return Html::a(Html::img($src, $imageOptions), $url, $options) .
+//            Html::a("<i class='fa fa-trash-o'></i>", ['/user/image/delete/', 'id' => $id], ['class' => 'delete-button', 'title' => 'Xóa ảnh', 'confirm' => 'Bạn có chắc muốn xóa ảnh này?']);
+        return Html::tag('div', Html::a(Html::img($src, $imageOptions), $url, $options) . Html::tag('div', Html::a("<i class='fa fa-trash-o'></i>", ['/user/image/delete/', 'id' => $id], ['class' => 'delete-button', 'title' => 'Xóa ảnh', 'onclick' => "deleteImage($id)"]), ['style' => ['text-align' => 'center']]), ['class' => 'col-md-1']);
     }
 
     /**
