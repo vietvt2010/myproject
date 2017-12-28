@@ -108,5 +108,13 @@ class Module extends BaseModule
         'settings/<action:\w+>'                  => 'settings/<action>'
     ];
     
+    /**
+     * layout 
+     */
     public $layout = 'main';
+    
+    /**
+     * default route
+     */
+    public $defaultRoute = 'security/login';
 }

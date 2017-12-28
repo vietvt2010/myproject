@@ -15,7 +15,7 @@ class UploadForm extends Model
     public function rules()
     {
         return [
-            [['file'], 'file', 'extensions' => 'png, jpg, gif', 'maxSize' => 1024000, 'tooBig' => 'Limit is 1MB'],
+            [['file'], 'file', 'extensions' => 'png, jpg, gif', 'maxSize' => 2048000, 'tooBig' => 'Limit is 1MB'],
             ['file', 'required'],
         ];
     }

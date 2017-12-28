@@ -134,41 +134,26 @@ UserAsset::register($this);
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?= Url::to('@web/images/user2-160x160.jpg') ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+                <img src="<?= Yii::$app->user->identity->profile->gravatar_id ? Yii::$app->user->identity->profile->gravatar_id : '/images/default.png' ?>" class="user-image" alt="User Image">
+                <span class="hidden-xs"><?= Yii::$app->user->identity->username ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?= Url::to('@web/images/user2-160x160.jpg') ?>" class="img-circle" alt="User Image">
+                <img src="<?= Yii::$app->user->identity->profile->gravatar_id ? Yii::$app->user->identity->profile->gravatar_id : '/images/default.png' ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                    <small>Member since <?= date('d-M-Y', Yii::$app->user->identity->created_at) ?></small>
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+              
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <?= Html::a('Sign Out', ['/user/security/logout'], ['class' => 'btn btn-default btn-flat', 'data-method' => 'post']) ?>
                 </div>
               </li>
             </ul>
@@ -188,10 +173,10 @@ UserAsset::register($this);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-            <img src="<?= Url::to('@web/images/user2-160x160.jpg') ?>" class="img-circle" alt="User Image">
+            <img src="<?= Yii::$app->user->identity->profile->gravatar_id ? Yii::$app->user->identity->profile->gravatar_id : '/images/default.png' ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?= Yii::$app->user->identity->username ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -209,36 +194,24 @@ UserAsset::register($this);
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            
-          </a>
-          
-        </li>
-        
         <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
+          <a href="/user/admin">
+            <i class="fa fa-user-circle-o"></i> <span>Người dùng</span>
+          </a>
+        </li>
+        <li>
+          <a href="/user/image">
+            <i class="fa fa-file-image-o"></i> <span>Hình ảnh</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li>
+          <a href="/user/page">
+            <i class="fa fa-file-o"></i>
+            <span>Trang</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-          </ul>
         </li>
         <li class="treeview">
           <a href="#">
@@ -353,10 +326,10 @@ UserAsset::register($this);
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        <li class="header">NHÃN</li>
+        <li><a><i class="fa fa-circle-o text-red"></i> <span>Quan trọng</span></a></li>
+        <li><a><i class="fa fa-circle-o text-yellow"></i> <span>Cần chú ý</span></a></li>
+        <li><a><i class="fa fa-circle-o text-aqua"></i> <span>Thông tin</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

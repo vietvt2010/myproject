@@ -37,6 +37,11 @@ class SecurityController extends Controller
 {
     use AjaxValidationTrait;
     use EventTrait;
+    
+    /**
+     * layout
+     */
+    public $layout = '@app/views/layouts/main.php';
 
     /**
      * Event is triggered before logging user in.

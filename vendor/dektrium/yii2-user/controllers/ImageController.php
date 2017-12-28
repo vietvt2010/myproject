@@ -47,16 +47,21 @@ class ImageController extends \yii\web\Controller
     public function actionUpload()
     {
         $model = new UploadForm();
+        $image = new Image();
         
         if ($model->load(\Yii::$app->request->post())) {
             $model->file = UploadedFile::getInstance($model, 'file');
             
             if ($model->validate() && $model->file !== null) {
-                if (FileHelper::uploadImage($model->file)) {
-                    return Json::encode('succes');
+                if ($destination = FileHelper::uploadImage($model->file)) {
+                    $image->source = '/' . $destination;
+                    if ($image->save()) {
+                        return $this->redirect('/user/image');
+                    }
                 }
             }
-            return Json::encode('failed');
+            \Yii::$app->session->setFlash('error', 'Upload failed');
+            return $this->redirect('/user/image');
         }
         
         return $this->renderAjax('upload', [

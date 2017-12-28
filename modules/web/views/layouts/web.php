@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\modules\web\assets\WebAsset;
 use yii\helpers\Url;
+use app\models\Navigation;
 
 $assets = WebAsset::register($this);
 
@@ -13,7 +14,7 @@ $this->registerJs(
 "$(window).on('load', function() {
     $('#slider').nivoSlider(); 
 });"
-)
+);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -68,14 +69,12 @@ $this->registerJs(
                     <div class="col-md-12">
                         <nav class="navbar navbar-default">
                             <ul class="nav navbar-nav">
-                                <li class="active menu-tab"><a href="#"><b>Home</b></a></li>
-                                <li class="menu-tab"><a href="#">Page 1</a></li>
-                                <li class="menu-tab"><a href="#">Page 2</a></li>
-                                <li class="menu-tab"><a href="#">Page 3</a></li>
-                                <li class="menu-tab"><a href="#">Page 4</a></li>
-                                <li class="menu-tab"><a href="#">Page 5</a></li>
-                                <li class="menu-tab"><a href="#">Page 6</a></li>
-                                <li class="menu-tab"><a href="#">Page 7</a></li>
+                                <?php
+                                    $nav = Navigation::find()->all();
+                                    foreach ($nav as $item):
+                                ?>
+                                <li class="menu-tab <?= $_SERVER['REQUEST_URI'] == $item->url ? 'active' : '' ?>"><a href="<?= $item->url ?>"><b><?= $item->name ?></b></a></li>
+                                <?php endforeach; ?>
                             </ul>
                         </nav>
                     </div>
