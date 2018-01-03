@@ -29,6 +29,7 @@ class WebAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
         'yii\web\JqueryAsset',
     ];
     
@@ -40,6 +41,7 @@ class WebAsset extends AssetBundle
         parent::init();
 
         $this->publishOptions['forceCopy'] = YII_ENV_DEV;
+        $this->jsOptions = ['position' => \yii\web\View::POS_HEAD];
     }
     
 }

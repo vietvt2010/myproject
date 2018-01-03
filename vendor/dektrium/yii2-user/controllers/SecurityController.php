@@ -150,7 +150,7 @@ class SecurityController extends Controller
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
-            $this->goHome();
+            $this->redirect(['admin/index']);
         }
 
         /** @var LoginForm $model */
@@ -187,7 +187,7 @@ class SecurityController extends Controller
 
         $this->trigger(self::EVENT_AFTER_LOGOUT, $event);
 
-        return $this->goHome();
+        return $this->redirect(['admin/index']);;
     }
 
     /**

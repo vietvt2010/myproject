@@ -8,7 +8,8 @@
 namespace yii\helpers;
 
 use Yii;
-
+use yii\imagine\Image;
+use Imagine\Image\Box;
 /**
  * File system helper
  *
@@ -51,5 +52,17 @@ class FileHelper extends BaseFileHelper
     public static function resizeImage($destination)
     {
         Image::getImagine()->open($destination)->resize(new Box(400, 460))->save($destination);
+    }
+    
+    public static function uploadSlide($image)
+    {
+        $destination = Yii::$app->params['imagePath'] . $image->baseName . time() . '.' . $image->extension;
+        
+        if ($image->saveAs($destination)) {
+            Image::getImagine()->open($destination)->resize(new Box(500, 199))->save($destination);
+            return $destination;
+        }
+        
+        return false;
     }
 }

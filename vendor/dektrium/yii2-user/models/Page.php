@@ -15,6 +15,12 @@ use Yii;
 class Page extends \yii\db\ActiveRecord
 {
     /**
+     * constant default page id
+     */
+    const DEFAULT_PAGE_ID = 1;
+
+
+    /**
      * @inheritdoc
      */
     public static function tableName()

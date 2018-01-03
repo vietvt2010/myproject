@@ -40,10 +40,13 @@ use yii\widgets\Pjax;
                                     'value' => function($model) {
                                         return substr($model->content, 0, 200);
                                     },
+                                    'format' => 'text'
                                 ],
                                 'nav_id',
 
-                                ['class' => 'yii\grid\ActionColumn'],
+                                [
+                                    'class' => 'yii\grid\ActionColumn',
+                                ],
                             ],
                         ]); ?>
                     <?php Pjax::end(); ?>
