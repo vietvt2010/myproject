@@ -48,16 +48,14 @@ class SiteinfoController extends \yii\web\Controller
      */
     public function actionAbout()
     {
-        $model = new Siteinfo();
+        $model = Siteinfo::findOne(['cate' => 'about']);
         
         if ($model->load(\Yii::$app->request->post())) {
             $model->cate = 'about';
-            if ($model->validate()) {
-                $current = Siteinfo::findOne(['cate' => 'about']);
-                if ($current !== null) {
-                    $current->delete();
-                }
-                $model->save(false);
+            if ($model->save()) {
+                \Yii::$app->session->setFlash('success', 'Success');
+            } else {
+                \Yii::$app->session->setFlash('error', $model->getErrors());
             }
             
             return $this->redirect('/user');
@@ -73,16 +71,14 @@ class SiteinfoController extends \yii\web\Controller
      */
     public function actionContact()
     {
-        $model = new Siteinfo();
+        $model = Siteinfo::findOne(['cate' => 'contact']);
         
         if ($model->load(\Yii::$app->request->post())) {
             $model->cate = 'contact';
-            if ($model->validate()) {
-                $current = Siteinfo::findOne(['cate' => 'contact']);
-                if ($current !== null) {
-                    $current->delete();
-                }
-                $model->save(false);
+            if ($model->save()) {
+                \Yii::$app->session->setFlash('success', 'Success');
+            } else {
+                \Yii::$app->session->setFlash('error', $model->getErrors());
             }
             
             return $this->redirect('/user');
