@@ -7,6 +7,8 @@ use yii\widgets\Breadcrumbs;
 use app\modules\web\assets\WebAsset;
 use yii\helpers\Url;
 use app\models\Navigation;
+use dektrium\user\models\Image;
+use dektrium\user\models\Siteinfo;
 
 $assets = WebAsset::register($this);
 
@@ -55,7 +57,8 @@ $this->registerJs(
                 <!-- top header -->
                 <div id="top-header" class="row">
                     <div class="col-md-12">
-                        <img src="<?= Url::to($assets->baseUrl . '/images/Banner-da.jpg') ?>" style="width: 100%;">
+                        <?php $banner = Image::findOne(['cate' => 'banner']) ?>
+                        <img src="<?= $banner ? $banner->source : '' ?>" style="width: 100%;">
                     </div>
                 </div>
                 <!-- end top header -->
@@ -102,10 +105,13 @@ $this->registerJs(
                 <div id="slide-header" class="row">
                     <div class="slider-wrapper theme-default col-md-12">
                         <div id="slider" class="nivoSlider">
-                            <img src='/images/photo1.png' data-thumb="images/toystory.jpg" alt="" />
-                            <img src="<?= Url::to($assets->baseUrl . '/images/up.jpg') ?>" data-thumb="images/up.jpg" alt=""/>
-                            <img src="<?= Url::to($assets->baseUrl . '/images/walle.jpg') ?>" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
-                            <img src="<?= Url::to($assets->baseUrl . '/images/nemo.jpg') ?>" data-thumb="images/nemo.jpg" alt=""/>
+                            <?php
+                                $slides = Image::findAll(['cate' => 'slide']);
+                                foreach ($slides as $slide):
+                            ?>
+                            <img src="<?= $slide ? $slide->source : '' ?>" alt="" />
+                            
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -123,11 +129,12 @@ $this->registerJs(
                         </div>
                         <div class="menu-body">
                             <ul>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
+                            <?php
+                                $duhocPosts = \dektrium\user\models\Post::find()->where(['cate_id' => 2])->limit(8)->all();
+                                foreach ($duhocPosts as $post):
+                            ?>
+                                <li><a href="/web/post/view?id=<?= $post->id ?>"><?= $post->title ?></a></li>
+                            <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
@@ -138,11 +145,12 @@ $this->registerJs(
                         </div>
                         <div class="menu-body">
                             <ul>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
+                            <?php
+                                $duhocPosts = \dektrium\user\models\Post::find()->where(['cate_id' => 3])->limit(8)->all();
+                                foreach ($duhocPosts as $post):
+                            ?>
+                                <li><a href="/web/post/view?id=<?= $post->id ?>"><?= $post->title ?></a></li>
+                            <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
@@ -153,11 +161,12 @@ $this->registerJs(
                         </div>
                         <div class="menu-body">
                             <ul>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
-                                <li><a href="#">Tuyển sinh Du học Nhật Bản</a></li>
+                            <?php
+                                $duhocPosts = \dektrium\user\models\Post::find()->where(['cate_id' => 5])->limit(8)->all();
+                                foreach ($duhocPosts as $post):
+                            ?>
+                                <li><a href="/web/post/view?id=<?= $post->id ?>"><?= $post->title ?></a></li>
+                            <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
@@ -166,11 +175,6 @@ $this->registerJs(
 
                 <!-- main content -->
                 <div id="main-content" class="col-md-10">
-                    <?=
-                    Breadcrumbs::widget([
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ])
-                    ?>
                     <?= $content ?>
                 </div>
                 <!-- end main content -->
@@ -184,22 +188,18 @@ $this->registerJs(
                         <div class="col-md-4 footer-element">
                             <strong>VỀ CHÚNG TÔI</strong>
                             <hr>
-                            <p>Trải qua hơn 10 năm hình thành và phát triển, 
-                                Công ty CP Tư vấn Du học KOKONO - Đơn vị thành viên thuộc TẬP ĐOÀN KẾ TOÁN HÀ NỘI hoạt động thành công trong lĩnh vực tư vấn du học Nhật Bản,
-                                Du học Hàn Quốc, Đào tạo Tiếng Nhật, Tiếng Trung, Tiếng Hàn. Hiện tại với 47 Chi nhánh trên toàn quốc,
-                                Kokono sẽ tiếp tục là cầu nối hữu hiệu giúp các tài năng trẻ Việt Nam đến với những ...</p>
+                            <?php $about = Siteinfo::findOne(['cate' => 'about']) ?>
+                            <p><?= $about ? $about->description : '' ?></p>
                         </div>
                         <div class="col-md-4 footer-element">
                             <strong>LIÊN HỆ</strong>
                             <hr>
-                            <p>Địa chỉ: Số 02 ngõ 12 Nguyễn Văn Huyên, Cầu Giấy, Hà Nội<br>
-                                Hotline: 01266-384-268<br>
-                                Email: duhockokono@gmail.com<br>
-                                Website: www.duhockokono.vn</p>
+                            <?php $contact = Siteinfo::findOne(['cate' => 'contact']) ?>
+                            <p><?= $contact ? $contact->description : '' ?></p>
 
                             <strong>BẢN ĐỒ CHỈ ĐƯỜNG</strong>
                             <hr>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.161958496375!2d105.79388031486204!3d20.986143994607826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acc651f1a5d3%3A0x59a99bfb3c117b80!2zNTQzIE5ndXnhu4VuIFRyw6NpLCBWxINuIFF1w6FuLCBIw6AgxJDDtG5nLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1513652003950" height="250" frameborder="0" style="border:0; width: 95%;" allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1861.9504585282511!2d105.79587355804452!3d21.036650199942518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab38905d77bb%3A0x6950c945cd6da332!2zTmfDtSAxMiBOZ3V54buFbiBWxINuIEh1ecOqbiwgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1515035967595" width="400" height="300" frameborder="0" style="border:0; width: 95%;" allowfullscreen></iframe>
 
                         </div>
                         <div class="col-md-4 footer-element">

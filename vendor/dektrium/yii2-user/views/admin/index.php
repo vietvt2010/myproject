@@ -22,8 +22,6 @@ use yii\widgets\Pjax;
  * @var \dektrium\user\models\UserSearch $searchModel
  */
 
-$this->title = Yii::t('user', 'Manage users');
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row" style="margin: 5px;">
     <div class="col-md-12">

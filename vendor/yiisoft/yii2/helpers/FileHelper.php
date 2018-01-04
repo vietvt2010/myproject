@@ -59,7 +59,19 @@ class FileHelper extends BaseFileHelper
         $destination = Yii::$app->params['imagePath'] . $image->baseName . time() . '.' . $image->extension;
         
         if ($image->saveAs($destination)) {
-            Image::getImagine()->open($destination)->resize(new Box(500, 199))->save($destination);
+            Image::getImagine()->open($destination)->resize(new Box(500, 150))->save($destination);
+            return $destination;
+        }
+        
+        return false;
+    }
+    
+    public static function uploadBanner($image)
+    {
+        $destination = Yii::$app->params['imagePath'] . $image->baseName . time() . '.' . $image->extension;
+        
+        if ($image->saveAs($destination)) {
+            Image::getImagine()->open($destination)->resize(new Box(2500, 280))->save($destination);
             return $destination;
         }
         

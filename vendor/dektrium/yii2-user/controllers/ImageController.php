@@ -19,7 +19,7 @@ class ImageController extends \yii\web\Controller
     
     public function actionIndex()
     {
-        $model = Image::find()->all();
+        $model = Image::findAll(['cate' => null]);
         
         return $this->render('index', [
             'model' => $model,

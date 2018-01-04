@@ -25,7 +25,7 @@ class UserAsset extends AssetBundle
     public $js = [
 //        'bower_components/jquery/dist/jquery.min.js',
         "bower_components/jquery-ui/jquery-ui.min.js",
-        "bower_components/bootstrap/dist/js/bootstrap.min.js",
+//        "bower_components/bootstrap/dist/js/bootstrap.min.js",
 //        "bower_components/raphael/raphael.min.js",
         "bower_components/morris.js/morris.js",
         "bower_components/jquery-sparkline/dist/jquery.sparkline.min.js",
@@ -45,6 +45,7 @@ class UserAsset extends AssetBundle
     public $depends = [
 //        'yii\web\YiiAsset',
 //        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
         'yii\web\JqueryAsset',
         'app\assets\AppAsset',
     ];

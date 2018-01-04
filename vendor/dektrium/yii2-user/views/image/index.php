@@ -22,8 +22,8 @@ use yii\helpers\Url;
             </div>
             <div class="box-body">
                 <?php foreach ($model as $item): ?>
-                <div class="col-md-3" style="text-align: center">
-                    <img src="<?= $item->source ?>" class="img img-responsive" width="100px" style="margin: 0 auto;">
+                <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: center">
+                    <img src="<?= $item->source ?>" class="img img-responsive" style="margin: 0 auto; width: 100px; height: 100px;">
                     <p style="width: 100%;"><?= $item->source ?></p>
                     <?= Html::a("<i class='fa fa-trash-o'></i>", ['#'], ['title' => 'Xóa ảnh', 'onclick' => "return deleteImage($item->id);"]) ?>
                 </div>

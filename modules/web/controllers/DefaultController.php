@@ -45,4 +45,16 @@ class DefaultController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    /**
+     * contact
+     */
+    public function actionContact()
+    {
+        $model = \dektrium\user\models\Siteinfo::findOne(['cate' => 'contact']);
+        
+        return $this->render('contact', [
+            'model' => $model,
+        ]);
+    }
 }
