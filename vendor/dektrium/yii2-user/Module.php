@@ -117,4 +117,20 @@ class Module extends BaseModule
      * default route
      */
     public $defaultRoute = 'security/login';
+    
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'except' => ['security/login'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
 }

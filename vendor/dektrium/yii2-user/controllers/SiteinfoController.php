@@ -88,5 +88,28 @@ class SiteinfoController extends \yii\web\Controller
             'model' => $model
         ]);
     }
+    
+    /**
+     * connect
+     */
+    public function actionConnect()
+    {
+        $model = Siteinfo::findOne(['cate' => 'connect']);
+        
+        if ($model->load(\Yii::$app->request->post())) {
+            $model->cate = 'connect';
+            if ($model->save()) {
+                \Yii::$app->session->setFlash('success', 'Success');
+            } else {
+                \Yii::$app->session->setFlash('error', $model->getErrors());
+            }
+            
+            return $this->redirect('/user');
+        }
+        
+        return $this->render('text-form', [
+            'model' => $model
+        ]);
+    }
 
 }

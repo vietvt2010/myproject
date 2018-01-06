@@ -44,41 +44,7 @@ class PageController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single Page model.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
 
-    /**
-     * Creates a new Page model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new Page();
-
-        if ($model->load(Yii::$app->request->post())) {
-            if ($model->save()) {
-                \Yii::$app->session->setFlash('success', 'Tạo trang thành công!');
-            } else {
-                \Yii::$app->session->setFlash('error', 'Tạo trang không thành công!');
-            }
-            
-            return $this->redirect(['index']);
-        }
-        
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
 
     /**
      * Updates an existing Page model.
@@ -105,18 +71,6 @@ class PageController extends Controller
         ]);
     }
 
-    /**
-     * Deletes an existing Page model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
 
     /**
      * Finds the Page model based on its primary key value.

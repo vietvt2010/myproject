@@ -50,7 +50,9 @@ ul.nav {
     background: radial-gradient(circle, #FF1800, #FF7600);
 }
 #main-left {
-    padding: 0;
+    padding-left: 0;
+    font-size: 12px;
+    padding-right: 10px;
 }
 #main-content {
     background: url("../images/bgcolRight.png");
@@ -67,6 +69,7 @@ ul.nav {
     background: url("../images/bgHead.png");
     background-repeat: no-repeat;
     background-position: left bottom;
+    background-size: contain;
     line-height: 25px;
 }
 .menu-body {
@@ -81,6 +84,7 @@ ul.nav {
     background: url("../images/bgItem.png");
     background-repeat: no-repeat;
     background-position: left bottom;
+    background-size: contain;
     line-height: 35px;
 }
 .menu-body ul li a {

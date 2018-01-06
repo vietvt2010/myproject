@@ -15,17 +15,11 @@ use yii\widgets\Pjax;
                 <?php if(Yii::$app->session->hasFlash('success') || Yii::$app->session->hasFlash('error')): ?>
                 <p class="alert alert-info"><?= implode("<br>", Yii::$app->session->getAllFlashes()) ?></div>
                 <?php endif; ?>
-                <h4 style="display: table;" class="pull-left">Quản lý trang điều hướng</h4>
+                <h4 style="display: table;" class="pull-left">Quản lý trang chủ</h4>
             </div>
             <div class="box-body">
                 <div class="page-index">
 
-                    <h1><?= Html::encode($this->title) ?></h1>
-                    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-                    <p>
-                        <?= Html::a('Create Page', ['create'], ['class' => 'btn btn-success']) ?>
-                    </p>
                     <?php Pjax::begin(); ?>
                         <?= GridView::widget([
                             'dataProvider' => $dataProvider,
@@ -46,6 +40,7 @@ use yii\widgets\Pjax;
 
                                 [
                                     'class' => 'yii\grid\ActionColumn',
+                                    'template' => '{update}'
                                 ],
                             ],
                         ]); ?>

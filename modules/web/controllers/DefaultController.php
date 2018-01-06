@@ -23,18 +23,6 @@ class DefaultController extends Controller
     }
     
     /**
-     * view page
-     * @param int $id
-     * @return string
-     */
-    public function actionViewPage($id)
-    {
-        return $this->render('view-page', [
-            'pageModel' => $this->findPageModel($id),
-        ]);
-    }
-    
-    /**
      * find page model
      */
     public function findPageModel($id)
@@ -54,6 +42,18 @@ class DefaultController extends Controller
         $model = \dektrium\user\models\Siteinfo::findOne(['cate' => 'contact']);
         
         return $this->render('contact', [
+            'model' => $model,
+        ]);
+    }
+    
+    /**
+     * connect
+     */
+    public function actionConnect()
+    {
+        $model = \dektrium\user\models\Siteinfo::findOne(['cate' => 'connect']);
+        
+        return $this->render('connect', [
             'model' => $model,
         ]);
     }

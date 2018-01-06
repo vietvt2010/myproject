@@ -10,6 +10,7 @@ use Yii;
  * @property string $id
  * @property string $name
  * @property string $url
+ * @property string $type
  */
 class Navigation extends \yii\db\ActiveRecord
 {
@@ -28,8 +29,9 @@ class Navigation extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'url'], 'required'],
-            [['name'], 'string', 'max' => 100],
+            [['name'], 'string', 'max' => 30],
             [['url'], 'string', 'max' => 255],
+            [['type'], 'string', 'max' => 255],
         ];
     }
 
@@ -42,6 +44,7 @@ class Navigation extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'url' => 'Url',
+            'type' => 'Type',
         ];
     }
 }

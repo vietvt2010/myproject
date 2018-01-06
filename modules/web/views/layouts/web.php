@@ -25,6 +25,22 @@ $this->registerJs(
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="công ty đầu tư việt nam maika, tư vấn du học, nhật bản, kỹ sư nhật bản, lao động nhật bản, xuất khẩu lao động">
+        <meta name="description" content="Công ty đầu tư Việt Nam Maika">
+        <meta name="robots" content="noodp,index,follow">
+        <meta name='revisit-after' content='1 days'>
+        <meta http-equiv="content-language" content="vi">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="author" content="vietvotrung@admicro.vn">
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg">
+        <meta property="og:locale" content="vi_VN" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Công ty đầu tư Việt Nam Maika" />
+        <meta property="og:description" content="Tuyển kỹ sư lao động Nhật Bản" />
+        <meta property="og:url" content="http://thegoldennamankhanh.info/" />
+        <meta property="og:site_name" content="Công ty đầu tư Việt Nam Maika" />
+
         <?= Html::csrfMetaTags() ?>
         <title>Công ty đầu tư Việt Nam Maika</title>
         <?php $this->head() ?>
@@ -70,10 +86,10 @@ $this->registerJs(
                             <ul class="nav navbar-nav">
                                 <?php
                                     $nav = Navigation::find()->all();
-                                    $url = '/' . Yii::$app->controller->module->id . '/' . Yii::$app->controller->id . '/' . Yii::$app->controller->action->id;
+                                    $uri = $_SERVER['REQUEST_URI'];
                                     foreach ($nav as $item):
                                 ?>
-                                <li class="menu-tab <?= $url == $item->url ? 'active' : '' ?>"><a href="<?= $item->url ?>"><b><?= $item->name ?></b></a></li>
+                                <li class="menu-tab <?= $uri == $item->url ? 'active' : '' ?>"><a href="<?= $item->url ?>"><b><?= $item->name ?></b></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </nav>
@@ -84,10 +100,11 @@ $this->registerJs(
                                 <ul>
                                     <?php
                                         $nav = Navigation::find()->all();
-                                        $url = '/' . Yii::$app->controller->module->id . '/' . Yii::$app->controller->id . '/' . Yii::$app->controller->action->id;
+                                        $uri = $_SERVER['REQUEST_URI'];
+                                        var_dump($uri);
                                         foreach ($nav as $item):
                                     ?>
-                                    <li class="menu-tab <?= $url == $item->url ? 'active' : '' ?>"><a href="<?= $item->url ?>"><b><?= $item->name ?></b></a></li>
+                                    <li class="menu-tab <?= $uri == $item->url ? 'active' : '' ?>"><a href="<?= $item->url ?>"><b><?= $item->name ?></b></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>

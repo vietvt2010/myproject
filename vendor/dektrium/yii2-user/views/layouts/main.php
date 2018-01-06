@@ -210,7 +210,7 @@ UserAsset::register($this);
         <li>
           <a href="/user/page">
             <i class="fa fa-file-o"></i>
-            <span>Trang</span>
+            <span>Trang chủ</span>
           </a>
         </li>
         <li>
@@ -232,8 +232,12 @@ UserAsset::register($this);
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/user/siteinfo/about"><i class="fa fa-circle-o"></i> Về chúng tôi</a></li>
-            <li><a href="/user/siteinfo/contact"><i class="fa fa-circle-o"></i> Liên hệ</a></li>
+            <?php
+              $items = \dektrium\user\models\Siteinfo::find()->all();
+              foreach ($items as $item):
+            ?>
+            <li><a href="/user/siteinfo/<?= $item->cate ?>"><i class="fa fa-circle-o"></i> <?= $item->value ?></a></li>
+            <?php endforeach; ?>
           </ul>
         </li>
         
