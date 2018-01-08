@@ -16,7 +16,7 @@ class Web extends \yii\base\Module
      * @inheritdoc
      */
     public $layout = 'web';
-
+    
     /**
      * @inheritdoc
      */

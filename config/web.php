@@ -41,9 +41,11 @@ $config = [
         'db' => $db,
         
         'urlManager' => [
+            'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<action:\w+>' => 'web/default/<action>',
             ],
         ],
         
@@ -64,6 +66,7 @@ $config = [
             ],
             'admins' => ['admin'],
         ],
+        'gridview' => ['class' => 'kartik\grid\Module']
     ],
 ];
 

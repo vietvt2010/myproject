@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2018 at 10:56 AM
+-- Generation Time: Jan 08, 2018 at 10:35 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -109,12 +109,12 @@ CREATE TABLE `navigation` (
 --
 
 INSERT INTO `navigation` (`id`, `name`, `url`, `type`) VALUES
-(1, 'TRANG CHỦ', '/web/default/index', ''),
+(1, 'TRANG CHỦ', '/', ''),
 (2, 'DU học', '/web/post/view-cate?id=2', 'cate'),
 (3, 'tuyển dụng', '/web/post/view-cate?id=3', 'cate'),
 (4, 'học tiếng', '/web/post/view-cate?id=4', 'cate'),
 (5, 'tin tức', '/web/post/view-cate?id=5', 'cate'),
-(6, 'liên kết', '', ''),
+(6, 'liên kết', '/web/default/connect', ''),
 (7, 'liên hệ', '/web/default/contact', '');
 
 -- --------------------------------------------------------
@@ -217,8 +217,9 @@ CREATE TABLE `siteinfo` (
 --
 
 INSERT INTO `siteinfo` (`id`, `cate`, `value`, `description`) VALUES
-(4, 'about', '', '<p>Trải qua hơn 10 năm h&igrave;nh th&agrave;nh v&agrave; ph&aacute;t triển, C&ocirc;ng ty đầu tư Việt Nam Maika&nbsp;- Đơn vị&nbsp;hoạt động th&agrave;nh c&ocirc;ng trong lĩnh vực tư vấn du học Nhật Bản, Du học H&agrave;n Quốc, Đ&agrave;o tạo Tiếng Nhật, Tiếng Trung, Tiếng H&agrave;n. Hiện tại với 47 Chi nh&aacute;nh tr&ecirc;n to&agrave;n quốc, Maika sẽ tiếp tục l&agrave; cầu nối hữu hiệu gi&uacute;p c&aacute;c t&agrave;i năng trẻ Việt Nam đến với những miền đất đầy&nbsp;hứa hẹn.</p>\r\n'),
-(5, 'contact', '', '<p>Địa chỉ: Số 02 ng&otilde; 12 Nguyễn Văn Huy&ecirc;n, Cầu Giấy, H&agrave; Nội<br />\r\nHotline: 01266-384-268<br />\r\nEmail: duhockokono@gmail.com<br />\r\nWebsite: www.duhockokono.vn</p>\r\n');
+(4, 'about', 'Về chúng tôi', '<p>Trải qua hơn 10 năm h&igrave;nh th&agrave;nh v&agrave; ph&aacute;t triển, C&ocirc;ng ty đầu tư Việt Nam Maika&nbsp;- Đơn vị&nbsp;hoạt động th&agrave;nh c&ocirc;ng trong lĩnh vực tư vấn du học Nhật Bản, Du học H&agrave;n Quốc, Đ&agrave;o tạo Tiếng Nhật, Tiếng Trung, Tiếng H&agrave;n. Hiện tại với 47 Chi nh&aacute;nh tr&ecirc;n to&agrave;n quốc, Maika sẽ tiếp tục l&agrave; cầu nối hữu hiệu gi&uacute;p c&aacute;c t&agrave;i năng trẻ Việt Nam đến với những miền đất đầy&nbsp;hứa hẹn.</p>\r\n'),
+(6, 'contact', 'Liên hệ', '<p>H&agrave; Nội: số 2 - ng&otilde; 12 - Nguyễn Văn Huy&ecirc;n - quận Cầu Giấy - H&agrave; Nội<br />\r\nĐ&agrave; Nẵng: số 693/22 - Trần Văn Giao - quận Thanh Kh&ecirc; - Đ&agrave; Nẵng<br />\r\nHồ Ch&iacute; Minh: số 181 - L&ecirc; Đức Thọ - phường 17 - quận G&ograve; Vấp - TP. Hồ Ch&iacute; Minh<br />\r\nPhone: +84 24-3718-6960<br />\r\nMobile: 01266384268<br />\r\nEmail: trangmaika1992@gmail.com<br />\r\nWebsite: www.vnmaika.com</p>\r\n'),
+(7, 'connect', 'Liên kết', '<p><a href=\"http://duhockokono.vn/hoc-vien-nhat-ngu-quoc-te-tokyo-jtis-kokono-tham-truong.htm\"><img alt=\"Học viện Nhật Ngữ Quốc tế Tokyo JTIS - Chuyến thăm trường vô cùng thú vị \" src=\"http://duhockokono.vn/pic/PhotoAlbum/Hoc-vien-_636410883423162230_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-nhat-ngu-quoc-te-tokyo-jtis-kokono-tham-truong.htm\">Học viện Nhật Ngữ Quốc tế Tokyo JTIS - Chuyến thăm trường v&ocirc; c&ugrave;ng th&uacute; vị</a>23 ảnh - 368 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-quoc-te-fuji.htm\"><img alt=\"Học Viện Quốc Tế Fuji - Ngôi trường mang tên núi Phú Sĩ\" src=\"http://duhockokono.vn/pic/PhotoAlbum/Hoc-Vien-_636410894798080931_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-quoc-te-fuji.htm\">Học Viện Quốc Tế Fuji - Ng&ocirc;i trường mang t&ecirc;n n&uacute;i Ph&uacute; Sĩ</a>4 ảnh - 1434 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/truong-nhat-ngu-active-kokono-tham-va-lam-viec.htm\"><img alt=\"Trường Nhật Ngữ Active - Ban Lãnh Đạo Kokono Thăm và Làm việc tại trường\" src=\"http://duhockokono.vn/pic/PhotoAlbum/Truong-Nh_636410896627924478_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/truong-nhat-ngu-active-kokono-tham-va-lam-viec.htm\">Trường Nhật Ngữ Active - Ban L&atilde;nh Đạo Kokono Thăm v&agrave; L&agrave;m việc tại trường</a>7 ảnh - 2066 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-ngon-ngu-quoc-te-oji-tokyo-kokono-tham-truong.htm\"><img alt=\"Học viện Ngôn ngữ Quốc tế OJI TOKYO - Kokono thăm và làm việc tại trường\" src=\"http://duhockokono.vn/pic/PhotoAlbum/Hoc-vien-_636410893619907957_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-ngon-ngu-quoc-te-oji-tokyo-kokono-tham-truong.htm\">Học viện Ng&ocirc;n ngữ&nbsp;Quốc tế OJI TOKYO - Kokono thăm v&agrave; l&agrave;m việc tại trường</a>6 ảnh - 1593 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-ngoai-ngu-quoc-te-tokyo-chuyen-tham-cua-kokono.htm\"><img alt=\"Học viện Ngoại ngữ Quốc tế Tokyo - Chuyến thăm đáp lễ - Gắn tình anh em\" src=\"http://duhockokono.vn/pic/PhotoAlbum/Hoc-vien-_636410890823296250_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-ngoai-ngu-quoc-te-tokyo-chuyen-tham-cua-kokono.htm\">Học viện Ngoại ngữ Quốc tế Tokyo - Chuyến thăm đ&aacute;p lễ - Gắn t&igrave;nh anh em</a>5 ảnh - 1439 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-ngoai-ngu-aiwa-chuyen-tham-va-lam-viec-cua-du-hoc-kokono.htm\"><img alt=\"Học Viện Ngoại ngữ AIWA - Chuyến thăm và làm việc của Du Học Kokono \" src=\"http://duhockokono.vn/pic/PhotoAlbum/Hoc-Vien-_636410886445067476_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-ngoai-ngu-aiwa-chuyen-tham-va-lam-viec-cua-du-hoc-kokono.htm\">Học Viện Ngoại ngữ AIWA - Chuyến thăm v&agrave; l&agrave;m việc của Du Học Kokono</a>10 ảnh - 1560 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/kokono-tham-truong-nhat-ngu-quoc-te-sendai.htm\"><img alt=\"Kokono Thăm Trường Nhật Ngữ Quốc Tế Sendai\" src=\"http://duhockokono.vn/pic/PhotoAlbum/Kokono-Co_636373704633858995_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/kokono-tham-truong-nhat-ngu-quoc-te-sendai.htm\">Kokono Thăm Trường Nhật Ngữ Quốc Tế Sendai</a>23 ảnh - 184 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-nhat-ngu-quoc-te-tokyo-jtis.htm\"><img alt=\"Học Viện Nhật Ngữ Quốc Tế Tokyo JTIS\" src=\"http://duhockokono.vn/pic/PhotoAlbum/Du-hoc-Nh_636261617926664527_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hoc-vien-nhat-ngu-quoc-te-tokyo-jtis.htm\">Học Viện Nhật Ngữ Quốc Tế Tokyo JTIS</a>11 ảnh - 284 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/mot-so-hinh-anh-cua-du-hoc-sinh-viet-nam-tai-truong-nhat-ngu-kareri-tinh-okayama.htm\"><img alt=\"Một số hình ành của du học sinh Việt Nam tại Trường Nhật ngữ KARERI ở tỉnh OKAYAMA Nhật Bản\" src=\"http://duhockokono.vn/pic/PhotoAlbum/_636139357765778708_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/mot-so-hinh-anh-cua-du-hoc-sinh-viet-nam-tai-truong-nhat-ngu-kareri-tinh-okayama.htm\">Một số h&igrave;nh &agrave;nh của du học sinh Việt Nam tại Trường Nhật ngữ KARERI ở tỉnh OKAYAMA Nhật Bản</a>16 ảnh - 187 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hinh-anh-van-hoa-nhat-ban.htm\"><img alt=\"Hình ảnh Văn hóa Nhật Bản\" src=\"http://duhockokono.vn/pic/PhotoAlbum/4_636119644333506986_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hinh-anh-van-hoa-nhat-ban.htm\">H&igrave;nh ảnh Văn h&oacute;a Nhật Bản</a>19 ảnh - 465 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/tu-van-tuyen-sinh-du-hoc-nhat-ban.htm\"><img alt=\"Tư vấn &amp; tuyển sinh du học Nhật Bản\" src=\"http://duhockokono.vn/pic/PhotoAlbum/4_636119644014486426_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/tu-van-tuyen-sinh-du-hoc-nhat-ban.htm\">Tư vấn &amp; tuyển sinh du học Nhật Bản</a>5 ảnh - 271 lượt xem</p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hinh-anh-tuyen-sinh.htm\"><img alt=\"Hình ảnh tuyển sinh\" src=\"http://duhockokono.vn/pic/PhotoAlbum/3_636119642749012203_HasThumb_Thumb.jpg.ashx\" /></a></p>\r\n\r\n<p><a href=\"http://duhockokono.vn/hinh-anh-tuyen-sinh.htm\">H&igrave;nh ảnh tuyển sinh</a>4 ảnh - 263 lượt xem</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -299,7 +300,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`, `last_login_at`) VALUES
-(7, 'admin', 'vovietqh@gmail.com', '$2y$10$hfSqwAI0JF7bE6mkIrY7mudD9Jgwa8UIs6tuWYhFw9HHj5D89W61C', '2Lu-xFoAztSSeBCRf8wkroxsQDeMdQ__', 1513762337, NULL, NULL, '127.0.0.1', 1513762337, 1513762337, 0, 1514975937);
+(7, 'admin', 'vovietqh@gmail.com', '$2y$10$hfSqwAI0JF7bE6mkIrY7mudD9Jgwa8UIs6tuWYhFw9HHj5D89W61C', '2Lu-xFoAztSSeBCRf8wkroxsQDeMdQ__', 1513762337, NULL, NULL, '127.0.0.1', 1513762337, 1513762337, 0, 1515402261);
 
 -- --------------------------------------------------------
 
@@ -424,7 +425,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `siteinfo`
 --
 ALTER TABLE `siteinfo`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `social_account`
 --

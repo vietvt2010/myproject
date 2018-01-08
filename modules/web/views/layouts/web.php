@@ -104,7 +104,7 @@ $this->registerJs(
                                         var_dump($uri);
                                         foreach ($nav as $item):
                                     ?>
-                                    <li class="menu-tab <?= $uri == $item->url ? 'active' : '' ?>"><a href="<?= $item->url ?>"><b><?= $item->name ?></b></a></li>
+                                    <li class="menu-tab <?= $uri == $item->url ? 'active' : '' ?>"><a href="<?= Url::to([$item->url]) ?>"><b><?= $item->name ?></b></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
